@@ -8,7 +8,6 @@ public static extern int GetKeyboardState(byte[] keystate);
 public static extern int MapVirtualKey(uint uCode, int uMapType);
 [DllImport(\"user32.dll\", CharSet=CharSet.Auto)]
 public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeystate, System.Text.StringBuilder pwszBuff, int cchBuff, uint wFlags);
-\'@
 
 $API = Add-Type -MemberDefinition $signatures -Name \'Win32\' -Namespace API -PassThru
 
