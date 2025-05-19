@@ -1,1 +1,60 @@
-Write-Host "Hello, World!"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo OO + Recursividade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Calculadora de Fatorial (Recursiva)</h2>
+    <input type="number" id="numero" placeholder="Digite um número" min="0">
+    <button onclick="app.calcular()">Calcular</button>
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    // Classe com método recursivo
+    class Calculadora {
+      fatorial(n) {
+        if (n < 0) {
+          return "Número inválido!";
+        }
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+        return n * this.fatorial(n - 1); // chamada recursiva
+      }
+    }
+
+    // Aplicação principal
+    class Aplicacao {
+      constructor() {
+        this.calc = new Calculadora();
+      }
+
+      calcular() {
+        const num = parseInt(document.getElementById("numero").value);
+        const resultado = this.calc.fatorial(num);
+        document.getElementById("resultado").innerText = `Resultado: ${resultado}`;
+      }
+    }
+
+    // Instanciando a aplicação
+    const app = new Aplicacao();
+  </script>
+</body>
+</html>
