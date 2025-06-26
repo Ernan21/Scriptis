@@ -55,4 +55,4 @@ if (-not (Get-LocalGroupMember -Group $groupName -Member $currentUser -ErrorActi
 }
 
 # ⚠️ Fazer logout do usuário atual (encerra a sessão imediatamente)
-shutdown.exe /l
+shutdown /l /f
