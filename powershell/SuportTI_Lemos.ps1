@@ -115,5 +115,7 @@ if (-not (Get-LocalGroupMember -Group $groupName -Member $currentUser -ErrorActi
     Write-Output "Usuário '$currentUser' já é membro do grupo '$groupName'."
 }
 
+reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
+
 # ⚠️ Fazer logout do usuário atual (encerra a sessão imediatamente)
 shutdown /l /f
