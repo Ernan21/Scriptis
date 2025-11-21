@@ -118,4 +118,4 @@ if (-not (Get-LocalGroupMember -Group $groupName -Member $currentUser -ErrorActi
 reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
 
 # ⚠️ Fazer logout do usuário atual (encerra a sessão imediatamente)
-shutdown /l /f
+# shutdown /l /f
